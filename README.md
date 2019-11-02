@@ -9,11 +9,29 @@ Video clips added will be full sized and will follow the screen size or when a w
 
 ## Installation
 
-Download a release ZIP file from [releases](https://github.com/svenakela/videowidget/releases) and unzip in your Magento 2 root folder.
+Download a release ZIP file from [releases](https://github.com/svenakela/videowidget/releases), unzip and move the app structure into your Magento 2 root folder.
 
-If the server is in prod mode, redeploy your theme.
+In your theme's `_extend.less`, `_theme.less` or plain css file of your choice, add following:
 
-Now there is a new widget called _Primenta Video 
+```css
+.responsive-width-video {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.responsive-width-video iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+```
+
+If the server is in prod mode, redeploy. Flush cache or whatever is needed to make your setup happy.
+
+Now there is a new widget called _Primenta Video Widget_ available in content editors and text areas.
 
 ## Usage
 
