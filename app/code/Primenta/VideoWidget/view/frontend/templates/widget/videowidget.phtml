@@ -1,0 +1,17 @@
+<?php if($block->getData('videotitle')): ?>
+   <h2><?php echo $block->getData('videotitle'); ?></h2>
+<?php endif; ?>
+<?php if($block->getData('videoid')): ?>
+  <div class="responsive-width-video">
+    <?php if($block->getData('videosource') == 0): ?>
+      <iframe src="https://youtube.com/embed/<?php echo $block->getData('videoid'); ?>" width="560" height="315" 
+          frameborder="0" allowfullscreen=""></iframe>
+    <?php elseif($block->getData('videosource') == 1): ?>
+      <iframe src="https://player.vimeo.com/video/<?php echo $block->getData('videoid'); ?>" width="640" height="360" 
+          frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <?php else: ?>
+      Sorry! Video source is missing.
+    <?php endif; ?>
+  </div>
+<?php endif; ?>
+
